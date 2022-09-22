@@ -10,7 +10,7 @@ import {
 
 import React from "react";
 
-const { width } = Dimensions.get("window");
+const { width,height } = Dimensions.get("window");
 
 const HomeScreen = ({navigation}) => {
  

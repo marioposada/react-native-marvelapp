@@ -7,8 +7,10 @@ const Comics = ({ id, image, title ,item1}) => {
     <View style={style.wrapper}>
     <TouchableOpacity style={style.container}>
       <Image source={{ uri: image }} style={style.image} />
+      <View>
+          <Text style={style.separator}></Text>
+        </View>
       <Text style={style.text}>{title}</Text>
-      <Text>{item1.id}</Text>
     </TouchableOpacity>
     </View>
   );
@@ -16,11 +18,19 @@ const Comics = ({ id, image, title ,item1}) => {
 
 const style = StyleSheet.create({
   text: {
-    justifyContent: 'center'
+    justifyContent: "center",
+    fontSize: 18,
+    fontWeight: '600',
+    backgroundColor: '#151515',
+    width: '100%',
+    color: '#fff',
+    height: 60,
+    paddingTop: 10,
+    paddingLeft: 10
   },
   image: {
-    width: 300,
-    height: 300,
+    width: 240,
+    height: 240,
   },
   wrapper: {
     alignSelf: 'center',
@@ -33,8 +43,14 @@ const style = StyleSheet.create({
     alignSelf: 'center'
   },
   container: {
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+    marginHorizontal: 8
+  },
+  separator: {
+    height: 8,
+    backgroundColor: "#e62429",
+    width: 240,
+  },
 });
 
 export default Comics;

@@ -1,5 +1,5 @@
+import { Dimensions, ImageBackground, StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
 
 import { ActivityIndicator } from "react-native";
 import Character from "../components/Characters";
@@ -7,6 +7,8 @@ import Comics from "../components/Comics";
 import { FlatList } from "react-native-gesture-handler";
 import apiParams from "../utils/helpers/marvel";
 import axios from "axios";
+
+const { width,height } = Dimensions.get("window");
 
 const MarvelScreen = () => {
   const [isLoading, setLoading] = useState(true);
@@ -43,7 +45,9 @@ const MarvelScreen = () => {
   }, []);
 
   return (
-    <View>
+    <View style={styles.container}>
+     
+      <Text style={styles.title}>Characters</Text>
       {isLoading ? (
         <ActivityIndicator size="large" color="#00ff00" />
       ) : (
@@ -60,13 +64,14 @@ const MarvelScreen = () => {
           )}
         />
       )}
+      <Text style={styles.title}>Comics</Text>
       {isLoading ? (
         <ActivityIndicator size="large" color="#00ff00" />
       ) : (
         <FlatList
           horizontal
           data={dbco}
-          keyExtractor={({ id }) => id.string}
+          keyExtractor={({ id }) => id.string }
           renderItem={({ item }) => (
             <Comics
               image={`${item?.thumbnail?.path}.${item?.thumbnail.extension}`}
@@ -76,10 +81,31 @@ const MarvelScreen = () => {
           )}
         />
       )}
+     
     </View>
   );
 };
 
-const style = StyleSheet.create({});
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 28,
+    fontWeight: '600',
+    marginBottom: 1,
+    marginLeft: 7,
+    marginTop: 7,
+   
+  },
+  image: {
+    width: width ,
+    height: height ,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start'
+  },
+  container: {
+    flex: 1, 
+    
+  }
+  
+});
 
 export default MarvelScreen;

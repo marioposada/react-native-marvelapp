@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import { ActivityIndicator } from "react-native";
-import Character from "../components/Characters";
+import CharacterStarwars from "../components/CharacterStarwars";
 import { FlatList } from "react-native-gesture-handler";
 import axios from "axios";
 
@@ -22,7 +22,10 @@ const StarWarsScreen = () => {
   }, []);
 
   return (
-    <View>
+    <View style={style.container}>
+      <Text style={style.line1}></Text>
+      <Text style={style.title}>Characters</Text>
+      <Text style={style.line}></Text>
       {isLoading ? (
         <ActivityIndicator size="large" color="#181818" />
       ) : (
@@ -30,7 +33,11 @@ const StarWarsScreen = () => {
           data={db}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <Character image={`${item?.image}`} name={item.name} item={item} />
+            <CharacterStarwars
+              image={`${item?.image}`}
+              name={item.name}
+              item={item}
+            />
           )}
         />
       )}
@@ -38,6 +45,33 @@ const StarWarsScreen = () => {
   );
 };
 
-const style = StyleSheet.create({});
+const style = StyleSheet.create({
+  title: {
+    fontSize: 28,
+    fontWeight: '600',
+    marginBottom: 10,
+    marginLeft: 12,
+    marginTop: 7,
+    color: '#fff'
+   
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#151515'
+  },
+  line: {
+    height: 2,
+    backgroundColor: "#3A3A3A",
+    width: 360,
+    marginLeft: 12
+  },
+  line1: {
+    marginTop:20,
+    height: 2,
+    backgroundColor: "#3A3A3A",
+    width: 360,
+    marginLeft: 12
+  }
+});
 
 export default StarWarsScreen;

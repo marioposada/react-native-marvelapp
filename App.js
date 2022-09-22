@@ -1,7 +1,7 @@
 import HomeScreen from "./src/screens/HomeScreen";
 import MarvelScreen from "./src/screens/MarvelScreen";
+import React from 'react'
 import StarWarsScreen from './src/screens/StarWarsScreen';
-import { View } from "react-native";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
@@ -14,11 +14,5 @@ const navigator = createStackNavigator ({
 initialRouteName: 'Home',
 
 })
-
-
-
-
-
-
 
 export  default createAppContainer(navigator)
