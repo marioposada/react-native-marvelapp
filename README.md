@@ -18,7 +18,7 @@ $ npm start
 $ yarn start
 ```
 # Screenshot
-<h2 align="center"> <img width="500" src="https://github.com/marioposada/assets/blob/main/marvel/imagen1.gif" /> </h2>
+<h2 align="center"> <img width="700" src="https://github.com/marioposada/assets/blob/main/marvel/imagen1.gif" /> </h2>
                        
                        
 # Developed by 
