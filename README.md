@@ -1,4 +1,4 @@
-<h1 align="center"> <img width="500" src="https://github.com/marioposada/assets/blob/main/starwars/header.png" /> </h1>
+<h1 align="center"> <img width="500" src="https://github.com/marioposada/assets/blob/main/marvel/Marvel_Logo.svg.png" /> </h1>
 <h1 align="center">  React Native Marvel App  </h1>
 
 # Description
