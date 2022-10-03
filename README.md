@@ -1,5 +1,5 @@
 <h1 align="center"> <img width="500" src="https://github.com/marioposada/assets/blob/main/starwars/header.png" /> </h1>
-<h1 align="center">  React Native StarWars App  </h1>
+<h1 align="center">  React Native Marvel App  </h1>
 
 # Description
 Appmarvel is an App coded in React Native using the Marvel API.
